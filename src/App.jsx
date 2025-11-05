@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import BudgetTracker from './components/BudgetTracker';
 import PriceListEditor from './components/PriceListEditor';
 import SmartPantry from './components/SmartPantry';
-import ToolsPanel from './components/ToolsPanel';
+import DietPlanner from './components/DietPlanner';
 
 const KENYAN_GREEN = '#006633';
 
@@ -25,7 +25,7 @@ function App() {
             { id: 'budget', label: 'Budget' },
             { id: 'pantry', label: 'Smart Pantry' },
             { id: 'prices', label: 'Prices' },
-            { id: 'tools', label: 'Tools' },
+            { id: 'diet', label: 'Diet' },
           ].map((t) => (
             <button key={t.id} onClick={() => setTab(t.id)} className={
               'px-2 py-2 text-white/90 ' + (tab === t.id ? 'bg-white text-emerald-900 font-semibold' : '')
@@ -38,7 +38,7 @@ function App() {
         {tab === 'budget' && <BudgetTracker />}
         {tab === 'pantry' && <SmartPantry />}
         {tab === 'prices' && <PriceListEditor />}
-        {tab === 'tools' && <ToolsPanel />}
+        {tab === 'diet' && <DietPlanner />}
       </main>
 
       <footer className="max-w-xl mx-auto px-4 pb-8 text-center text-[11px] text-gray-500">
